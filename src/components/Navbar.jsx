@@ -112,36 +112,9 @@ const Navbar = ({ onHomeClick }) => {
                 >
                   Odd Even Sort
                 </Link>
-                <Link
-                  to="/cycle"
-                  onClick={closeSidebar}
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-lg text-left"
-                >
-                  Cycle Sort
-                </Link>
+                
 
-                <h2 className="text-gray-500 text-sm">LINEAR</h2>
-                <Link
-                  to="/counting"
-                  onClick={closeSidebar}
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-lg text-left"
-                >
-                  Counting Sort
-                </Link>
-                <Link
-                  to="/radix"
-                  onClick={closeSidebar}
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-lg text-left"
-                >
-                  Radix Sort
-                </Link>
-                <Link
-                  to="/bucket"
-                  onClick={closeSidebar}
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-lg text-left"
-                >
-                  Bucket Sort
-                </Link>
+                
               </div>
             </motion.div>
 

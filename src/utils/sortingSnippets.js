@@ -1021,3 +1021,129 @@ void oddEvenSort(vector<int>& arr) {
     }
 }`
 };
+
+export const cycleSortSnippets = {
+    javascript: `
+function cycleSort(arr) {
+    const n = arr.length;
+    for (let cycleStart = 0; cycleStart < n - 1; cycleStart++) {
+        let item = arr[cycleStart];
+        let pos = cycleStart;
+        for (let i = cycleStart + 1; i < n; i++) {
+        if (arr[i] < item) pos++;
+        }
+        if (pos === cycleStart) continue;
+        while (item === arr[pos]) pos++;
+        [arr[pos], item] = [item, arr[pos]];
+        while (pos !== cycleStart) {
+            pos = cycleStart;
+            for (let i = cycleStart + 1; i < n; i++) {
+                if (arr[i] < item) pos++;
+            }
+            while (item === arr[pos]) pos++;
+            [arr[pos], item] = [item, arr[pos]];
+        }
+    }
+    return arr;
+}`,
+
+    python: `
+def cycle_sort(arr):
+    n = len(arr)
+    for cycle_start in range(n - 1):
+        item = arr[cycle_start]
+        pos = cycle_start
+        for i in range(cycle_start + 1, n):
+        if arr[i] < item:
+            pos += 1
+        if pos == cycle_start:
+            continue
+        while item == arr[pos]:
+            pos += 1
+        arr[pos], item = item, arr[pos]
+        while pos != cycle_start:
+            pos = cycle_start
+            for i in range(cycle_start + 1, n):
+                if arr[i] < item:
+                    pos += 1
+                while item == arr[pos]:
+                    pos += 1
+                arr[pos], item = item, arr[pos]
+    return arr`,
+
+    java: `
+public static void cycleSort(int[] arr) {
+    int n = arr.length;
+    for (int cycleStart = 0; cycleStart < n - 1; cycleStart++) {
+        int item = arr[cycleStart];
+        int pos = cycleStart;
+        for (int i = cycleStart + 1; i < n; i++) {
+            if (arr[i] < item) pos++;
+        }
+        if (pos == cycleStart) continue;
+        while (item == arr[pos]) pos++;
+        int temp = arr[pos];
+        arr[pos] = item;
+        item = temp;
+        while (pos != cycleStart) {
+            pos = cycleStart;
+            for (int i = cycleStart + 1; i < n; i++) {
+                if (arr[i] < item) pos++;
+            }
+            while (item == arr[pos]) pos++;
+            temp = arr[pos];
+            arr[pos] = item;
+            item = temp;
+        }
+    }
+}`,
+
+    c: `
+void cycleSort(int arr[], int n) {
+    for (int cycleStart = 0; cycleStart < n - 1; cycleStart++) {
+        int item = arr[cycleStart];
+        int pos = cycleStart;
+        for (int i = cycleStart + 1; i < n; i++) {
+            if (arr[i] < item) pos++;
+        }
+        if (pos == cycleStart) continue;
+        while (item == arr[pos]) pos++;
+        int temp = arr[pos];
+        arr[pos] = item;
+        item = temp;
+        while (pos != cycleStart) {
+            pos = cycleStart;
+            for (int i = cycleStart + 1; i < n; i++) {
+                if (arr[i] < item) pos++;
+            }
+            while (item == arr[pos]) pos++;
+            temp = arr[pos];
+            arr[pos] = item;
+            item = temp;
+        }
+    }
+}`,
+
+cpp: `
+void cycleSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int cycleStart = 0; cycleStart < n - 1; cycleStart++) {
+        int item = arr[cycleStart];
+        int pos = cycleStart;
+        for (int i = cycleStart + 1; i < n; i++) {
+            if (arr[i] < item) pos++;
+        }
+        if (pos == cycleStart) continue;
+        while (item == arr[pos]) pos++;
+        swap(item, arr[pos]);
+        while (pos != cycleStart) {
+            pos = cycleStart;
+            for (int i = cycleStart + 1; i < n; i++) {
+                if (arr[i] < item) pos++;
+            }
+            while (item == arr[pos]) pos++;
+            swap(item, arr[pos]);
+        }
+    }
+}`
+};

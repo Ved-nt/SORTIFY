@@ -112,7 +112,13 @@ const Navbar = ({ onHomeClick }) => {
                 >
                   Odd Even Sort
                 </Link>
-                
+                <Link
+                  to="/cycle"
+                  onClick={closeSidebar}
+                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-lg text-left"
+                >
+                  Cycle Sort
+                </Link>
 
                 
               </div>
